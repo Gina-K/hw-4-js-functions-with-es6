@@ -13,8 +13,8 @@ const convert = (hash) => Object.entries(hash);
 
 
 //Task 3
-function toCamelCase(str) {
-    var separator;
+const toCamelCase = (str) => {
+    let separator;
 
     if (str.indexOf("-") !== -1) {
         separator = "-";
@@ -22,11 +22,7 @@ function toCamelCase(str) {
         separator = "_";
     }
 
-    var arr = str.split(separator).map(function (word, index) {
-        return index === 0 ? word : word.charAt(0).toUpperCase() + word.slice(1);
-    });
-
-    return arr.join("");
+    return str.split(separator).map((word, index) => index === 0 ? word : word.charAt(0).toUpperCase() + word.slice(1)).join("");
 }
 
 // console.log(toCamelCase("The_stealth_warrior"));
