@@ -1,12 +1,7 @@
 'use strict';
 
 // Task 1
-function splitAndMerge(str, sp) {
-    var array = str.split(" ").map(function (elem) {
-        return elem.split("").join(sp);
-    })
-    return array.join(" ");
-}
+const splitAndMerge = (str, sp) => str.split(" ").map(elem => elem.split("").join(sp)).join(" ");
 
 // console.log(splitAndMerge("My name is John"," "));
 
