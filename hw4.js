@@ -29,13 +29,7 @@ const toCamelCase = (str) => {
 
 
 // Task 4
-function reverseWords(str) {
-    return str.split(" ")
-        .map(function (word) {
-            return word.split("").reverse().join("");
-        })
-        .join(" ");
-}
+const reverseWords = (str) => str.split(" ").map(word => word.split("").reverse().join("")).join(" ");
 
 // console.log(reverseWords(" A fun little challenge! "));
 
