@@ -35,24 +35,16 @@ const reverseWords = (str) => str.split(" ").map(word => word.split("").reverse(
 
 
 //Task 5
-function stringExpansion(str) {
-    var count = 1;
-
-    function charExpansion(count, char) {
-        var arr = [];
-        for (var i = 0; i < count; i++) {
-            arr.push(char);
-        }
-        return arr.join("");
-    }
+const stringExpansion = (str) => {
+    let count = 1;
 
     if (str == "") {
         return str;
     } else {
         return str.split("")
-            .map(function (char) {
+            .map(char => {
                 if (!+char && +char !== 0) {
-                    return charExpansion(count, char);
+                    return char.repeat(count);
                 } else {
                     count = +char;
                     return "";
