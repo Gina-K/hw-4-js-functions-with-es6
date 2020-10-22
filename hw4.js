@@ -7,16 +7,7 @@ const splitAndMerge = (str, sp) => str.split(" ").map(elem => elem.split("").joi
 
 
 // Task 2
-function convert(hash) {
-    var arr = [];
-    for (var key in hash) {
-        var propArr = [];
-        propArr.push(key);
-        propArr.push(hash[key]);
-        arr.push(propArr);
-    }
-    return arr;
-}
+const convert = (hash) => Object.entries(hash);
 
 // console.log(convert({name: 'Jeremy', age: 24, role: 'Software Engineer'}));
 
