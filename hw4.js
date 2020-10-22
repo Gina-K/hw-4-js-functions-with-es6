@@ -58,13 +58,9 @@ const stringExpansion = (str) => {
 
 
 // Task 6
-function largest() {
-    return Math.max.apply(null, arguments);
-}
+const largest = (...args) => Math.max.apply(null, args);
 
-function smallest() {
-    return Math.min.apply(null, arguments);
-}
+const smallest = (...args) => Math.min.apply(null, args);
 
 // console.log(largest(2, 0.1, -5, 100, 3));
 // console.log(smallest(2, 0.1, -5, 100, 3));
