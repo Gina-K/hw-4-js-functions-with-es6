@@ -38,7 +38,7 @@ const reverseWords = str => str.split(" ").map(word => word.split("").reverse().
 const stringExpansion = str => {
     let count = 1;
 
-    if (str == "") {
+    if (str === "") {
         return str;
     } else {
         return str.split("")
@@ -69,9 +69,9 @@ const smallest = (...args) => Math.min.apply(null, args);
 // Task 7
 const transform = baseArray => baseArray.map((item) => ( () => item) );
 
-// const baseArray = [10, 20, 30, 40, 50];
-// const newArray = transform(baseArray);
-//
+const baseArray = [10, 20, 30, 40, 50];
+const newArray = transform(baseArray);
+
 // console.log(newArray[3]()); // should return 40
 // console.log(newArray[4]()); // should return 50
 // console.log(newArray);
@@ -88,15 +88,6 @@ const sum = (...arg) => {
 
 
 // Task 9
-// function countDown(num) {
-//     setTimeout(function count(num) {
-//         if (num >= 0) {
-//             console.log(num);
-//             setTimeout(count, 1000, num - 1);
-//         }
-//     }, 1000, num);
-// }
-
 const countDown = num => {
     const count = num => {
         if (num >= 0) {
