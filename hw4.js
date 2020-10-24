@@ -88,13 +88,24 @@ const sum = (...arg) => {
 
 
 // Task 9
-function countDown(num) {
-    setTimeout(function count(num) {
+// function countDown(num) {
+//     setTimeout(function count(num) {
+//         if (num >= 0) {
+//             console.log(num);
+//             setTimeout(count, 1000, num - 1);
+//         }
+//     }, 1000, num);
+// }
+
+const countDown = num => {
+    const count = num => {
         if (num >= 0) {
             console.log(num);
             setTimeout(count, 1000, num - 1);
         }
-    }, 1000, num);
+    };
+
+    setTimeout(count, 1000, num);
 }
 
 // countDown(3);
