@@ -78,18 +78,10 @@ const transform = baseArray => baseArray.map((item) => ( () => item) );
 
 
 //Task 8
-function sum() {
-    var arg = [].slice.call(arguments);
+const sum = (...arg) => {
+    const recursiveSum = arg => arg.length === 1 ? arg[0] : arg[0] + recursiveSum(arg.slice(1, arg.length));
 
-    function recursiveSum(arg) {
-        if (arg.length === 1) {
-            return arg[0];
-        } else {
-            return arg[0] + recursiveSum(arg.slice(1, arg.length));
-        }
-    }
-
-    return arguments.length === 0 ? 0 : recursiveSum(arg);
+    return arg.length === 0 ? 0 : recursiveSum(arg);
 }
 
 // console.log(sum(1, 2, 3, 4, 7));
