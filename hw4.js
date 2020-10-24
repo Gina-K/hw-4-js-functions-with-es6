@@ -67,17 +67,10 @@ const smallest = (...args) => Math.min.apply(null, args);
 
 
 // Task 7
-function transform(baseArray) {
-    var newArray = baseArray.map(function (item) {
-        return function () {
-            return item;
-        }
-    });
-    return newArray;
-}
+const transform = baseArray => baseArray.map((item) => ( () => item) );
 
-// var baseArray = [10, 20, 30, 40, 50];
-// var newArray = transform(baseArray);
+// const baseArray = [10, 20, 30, 40, 50];
+// const newArray = transform(baseArray);
 //
 // console.log(newArray[3]()); // should return 40
 // console.log(newArray[4]()); // should return 50
