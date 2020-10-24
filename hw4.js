@@ -7,13 +7,13 @@ const splitAndMerge = (str, sp) => str.split(" ").map(elem => elem.split("").joi
 
 
 // Task 2
-const convert = (hash) => Object.entries(hash);
+const convert = hash => Object.entries(hash);
 
 // console.log(convert({name: 'Jeremy', age: 24, role: 'Software Engineer'}));
 
 
 //Task 3
-const toCamelCase = (str) => {
+const toCamelCase = str => {
     let separator;
 
     if (str.indexOf("-") !== -1) {
@@ -29,13 +29,13 @@ const toCamelCase = (str) => {
 
 
 // Task 4
-const reverseWords = (str) => str.split(" ").map(word => word.split("").reverse().join("")).join(" ");
+const reverseWords = str => str.split(" ").map(word => word.split("").reverse().join("")).join(" ");
 
 // console.log(reverseWords(" A fun little challenge! "));
 
 
 //Task 5
-const stringExpansion = (str) => {
+const stringExpansion = str => {
     let count = 1;
 
     if (str == "") {
