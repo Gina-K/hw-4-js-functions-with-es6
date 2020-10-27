@@ -23,12 +23,10 @@ const sum = (...arg) => {
 }
 
 const countDown = num => {
-    const count = num => {
+    setInterval(() => {
         if (num >= 0) {
             console.log(num);
-            setTimeout(count, 1000, num - 1);
+            num--;
         }
-    };
-
-    setTimeout(count, 1000, num);
+    }, 1000, num);
 }
