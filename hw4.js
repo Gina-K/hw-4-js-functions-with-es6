@@ -8,24 +8,7 @@ const toCamelCase = str => str.replace(/(-|_)(.)/g, (all, separator, char) => ch
 
 const reverseWords = str => str.split(" ").map(word => word.split("").reverse().join("")).join(" ");
 
-const stringExpansion = str => {
-    let count = 1;
-
-    if (str === "") {
-        return str;
-    } else {
-        return str.split("")
-            .map(char => {
-                if (!+char && +char !== 0) {
-                    return char.repeat(count);
-                } else {
-                    count = +char;
-                    return "";
-                }
-            })
-            .join("");
-    }
-}
+const stringExpansion = str => str.replace(/(\d*)(\d)([A-Za-z]*)/g, (all, dumpNumbers, count, chars) => chars.split("").map(char => char.repeat(count)).join(""));
 
 const largest = (...args) => Math.max.apply(null, args);
 
