@@ -4,17 +4,7 @@ const splitAndMerge = (str, sp) => str.split(" ").map(elem => elem.split("").joi
 
 const convert = hash => Object.entries(hash);
 
-const toCamelCase = str => {
-    let separator;
-
-    if (str.indexOf("-") !== -1) {
-        separator = "-";
-    } else if (str.indexOf("_") !== -1) {
-        separator = "_";
-    }
-
-    return str.split(separator).map((word, index) => index === 0 ? word : word.charAt(0).toUpperCase() + word.slice(1)).join("");
-}
+const toCamelCase = str => str.replace(/(-|_)(.)/g, (all, separator, char) => char.toUpperCase());
 
 const reverseWords = str => str.split(" ").map(word => word.split("").reverse().join("")).join(" ");
 
