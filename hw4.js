@@ -16,11 +16,7 @@ const smallest = (...args) => Math.min.apply(null, args);
 
 const transform = baseArray => baseArray.map((item) => ( () => item) );
 
-const sum = (...arg) => {
-    const recursiveSum = arg => arg.length === 1 ? arg[0] : arg[0] + recursiveSum(arg.slice(1, arg.length));
-
-    return arg.length === 0 ? 0 : recursiveSum(arg);
-}
+const sum = (...arg) => arg.length === 0 ? 0 : arg[0] + sum.apply(null, arg.slice(1));
 
 const countDown = num => {
     setInterval(() => {
